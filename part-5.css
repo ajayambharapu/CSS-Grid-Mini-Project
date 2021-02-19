@@ -1,0 +1,240 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primaryColor: #f15025;
+    --mainBlack: #222;
+    --mainWhite: #fff;
+    --offWhite: #f7f7f7;
+    --darkGrey: #afafaf;
+    --mainTransition: all 0.3s linear;
+    --mainSpacing: 0.2rem;
+    --ff-primary: "Fira Code", monospace;
+}
+
+.layout h1{
+    font-family: var(--ff-primary);
+    text-transform: capitalize;
+    color: white;
+    background: var(--primaryColor);
+    font-size: 25px;
+    padding: 10px;
+    text-align: center;
+    letter-spacing: 4px;
+    box-sizing: border-box;
+}
+
+.layout .nav-links-set a{
+    color: black;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: var(--ff-primary);
+    font-size: 20px;
+    font-weight: 400;
+    background: var(--darkGrey);
+    padding: 17px;
+    letter-spacing: 3px;
+
+    transition: all 0.5s 0s;
+}
+
+.layout .nav-links-set{
+    display: grid;
+    /* why?, to place all those nav-links 
+    in a single column */
+
+    margin-bottom: 35px;
+}
+
+.layout p{
+    font-family: var(--ff-primary);
+    font-weight: 50;
+    line-height: 32px;
+    margin-bottom: 35px;
+
+    padding: 0 35px;
+}
+
+.layout .social-media i{
+    color: white;
+    font-size: 20px;
+}
+
+.layout .social-media{
+    background: var(--primaryColor);
+    height: 60px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-content: center;
+/* 
+    why?, to place all 
+    social-media icons in a 4-column-grid */
+}
+
+.layout .copyrights{
+    background: black;
+    color: white;
+    font-family: var(--ff-primary);
+    text-transform: capitalize;
+    font-size: 20px;
+    height: 55px;
+    padding: 10px;
+    text-align: center;
+    font-weight: 50;
+    box-sizing: border-box;
+}
+
+.layout>a{
+    color: var(--primaryColor);
+    background: white;
+    display: block;
+    border: 3px solid var(--primaryColor);
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-family: var(--ff-primary);
+    padding: 10px;
+    margin: 50px;
+    width: 160px;
+    text-align: center;
+
+    transition: all 0.5s 0s;
+}
+
+/* styling end */
+
+
+
+
+
+
+
+
+
+
+
+/* transition-starts */
+
+.layout .navigation a:hover{
+    color: white;
+}
+
+.layout>a:hover{
+    color: white;
+    background: var(--primaryColor);
+}
+
+/* transition-ends */
+
+
+
+
+
+
+
+
+
+
+/* media queries start */
+
+@media screen and (min-width:780px){
+
+    .layout .nav-links-set{
+        background: var(--darkGrey);
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+    }
+
+    .layout-container{
+        height: 84vh;
+        /* why?, to fit "h1" to "coyrights" 
+        within 100vh of screen */
+    
+        display: grid;
+        align-content: space-between;
+    }
+
+    .layout p{
+        height: 55vh;
+        /* why?, to fit "p" within 55vh of screen, 
+        so that when screen-width increases, 
+        space will be created at only bottom of "p", 
+        but not top of "p" */
+
+        /*! and also to completely fit this in the "layout-container", so that no gap will be left b/w it's grid-children */
+    }
+
+}
+
+@media screen and (min-width:1100px){
+
+    .layout .nav-links-set{
+        width: 210px;
+
+        height: 100%;
+        /* to fill this grid-child in it's 
+        grid-cell completely wrt height  
+        ![grid-row-height was set to 85vh]*/
+
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        align-content: space-around;
+    }
+
+    .layout .social-media{
+        background: var(--darkGrey);
+        width: 55px;
+
+        height: 100%;
+        /* to fill this grid-child in it's 
+        grid-cell completely wrt height 
+        ![grid-row-height was set to 85vh]*/
+
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        align-content: space-around;
+    }
+
+    .layout .layout-container{
+        width: 100%;
+        /* why?, so that 
+        "navigation", "paragraph", "social-media" 
+        will fill the whole screen by width */
+
+        height: 100%;
+        /* why?, to fit "h1" to "coyrights" 
+        within 100vh of screen */
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 85vh;
+    }
+
+    .layout .social-media{
+        justify-self: flex-end;
+    }
+
+    .layout p{
+        width: calc(100vw - 255px - 10px - 35px);
+        /* why?, to fit "p" within 55vh of screen, 
+        so that when screen-width increases, 
+        space will be created at only bottom of "p", 
+        but not top of "p" */
+
+        /* !and also to completely fit this in the "layout-container", so that no gap will be left b/w it's grid-children */
+
+        padding-top: 30px;
+        padding-right: 20px;
+        text-align: justify;
+    }
+
+}
+
+/* media queries end */

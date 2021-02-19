@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primaryColor: #f15025;
+    --mainBlack: #222;
+    --mainWhite: #fff;
+    --offWhite: #f7f7f7;
+    --darkGrey: #afafaf;
+    --mainTransition: all 0.3s linear;
+    --mainSpacing: 0.2rem;
+    --ff-primary: "Fira Code", monospace;
+}
+
+.hero-info{
+    background: var(--primaryColor);
+    width: 100%;
+    height: 100vh;
+}
+
+.hero h1{
+    color: white;
+    font-family: var(--ff-primary);
+    text-transform: capitalize;
+    font-size: 48px;
+    letter-spacing: 3px;
+    line-height: 70px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.hero p{
+    color: white;
+    font-family: var(--ff-primary);
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 50;
+    line-height: 32px;
+    text-align: left;
+
+    width: 60%;
+    max-width: 800px;
+    /* why used width, to control the number of lines a paragraph can take */
+}
+
+.hero a{
+    color: var(--primaryColor);
+    background: white;
+    display: block;
+    border: 3px solid var(--primaryColor);
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-family: var(--ff-primary);
+    padding: 10px;
+    margin: 50px;
+    width: 160px;
+    text-align: center;
+
+    transition: all 0.5s 0s;
+}
+
+.hero-info{
+    display: grid;
+    justify-content: flex-start;
+    align-content: center;
+    /* why? grid was activated to place it's children at center vertically & at starting horizontally */
+}
+
+.hero h1, .hero p{
+    margin-left: 8%;
+    /* why?, to shift these items little left, so that they dont be kissing the screen */
+}
+
+/* styling-end */
+
+
+
+
+
+
+
+
+
+
+/* transition-starts */
+
+.hero a:hover{
+    color: white;
+    background: var(--primaryColor);
+}
+
+/* transition-ends */
+
+
+
+
+
+
+
+
+
+/* media-queries-start*/
+
+@media screen and (min-width:770px){
+
+    .hero-info{
+        background: linear-gradient(rgba(241, 81, 37, 0.74), rgba(0, 0, 0, 0.692)), url(./Resources/images/size-image-2.jpeg) no-repeat center/cover fixed;
+
+        justify-content: center;
+    }
+
+    .hero h1, .hero p{
+        margin-left: 13%;
+        /* why?, to counter the 
+        previously set margin-left: 8% */
+    }
+
+    .hero h1{
+        font-size: 65px;
+        margin-bottom: 40px;
+    }
+    
+}
+
+/* media-queries-end*/

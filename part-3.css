@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primaryColor: #f15025;
+    --mainBlack: #222;
+    --mainWhite: #fff;
+    --offWhite: #f7f7f7;
+    --darkGrey: #afafaf;
+    --mainTransition: all 0.3s linear;
+    --mainSpacing: 0.2rem;
+    --ff-primary: "Fira Code", monospace;
+}
+
+.cards{
+    padding-top: 65px;
+    padding-bottom: 5px;
+    /* above is the padding for whole part */
+}
+
+.cards-container{
+    padding-top: 40px;
+    padding-bottom: 135px;
+    /* above is the padding for only cards-set */
+}
+
+.cards h1{
+    color: black;
+    font-family: var(--ff-primary);
+    text-transform: capitalize;
+    font-size: 50px;
+    letter-spacing: 5px;
+    text-align: center;
+    line-height: 72px;
+}
+
+.cards a{
+    color: var(--primaryColor);
+    background: white;
+    display: block;
+    border: 3px solid var(--primaryColor);
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-family: var(--ff-primary);
+    padding: 10px;
+    margin: 50px;
+    width: 160px;
+    text-align: center;
+
+    transition: all 0.5s 0s;
+}
+
+.card{
+    width: 100%;
+    /* why?, if not, 
+    the grid-child is not completely fitting it's cell */
+
+    height: 70%;
+    /* the above are the 
+    dimensions of each individual card */
+}
+
+.card img{
+    width: 100%;
+        /* why above prop?, 
+    to fit the image 
+    with it's width = 100% of width of it's container named "card"*/
+
+    height: 100%;
+    /* why above prop?
+    the image will fit the entire .card container, 
+    and one more interesting thing is "card-$-icons" & "card-$-info" are overflowing */
+
+    border: 1px solid var(--darkGrey);
+}
+
+.card h2{
+    color: black;
+    font-family: var(--ff-primary);
+    text-transform: capitalize;
+    font-size: 18px;
+    letter-spacing: 5px;
+    word-spacing: 7px;
+    margin: 20px;
+    margin-top: 12px;
+}
+
+.card p{
+    color: black;
+    font-family: var(--ff-primary);
+    font-size: 12px;
+    font-weight: 50;
+    letter-spacing: 1px;
+    line-height: 25px;
+    margin: 20px;
+}
+
+.card i{
+    color: var(--primaryColor);
+}
+
+.card-1-icons,
+.card-2-icons,
+.card-3-icons,
+.card-4-icons{
+    width: 100%;
+    height: 40px;
+    /* why height was given a hard-value?
+    because height must be fixed and 
+    shd not increase with viewport height */
+
+    background: var(--darkGrey);
+    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-content: center;
+    /* why above grid?
+    to place the FA-icons in a single row */
+}
+
+.card-1-info,
+.card-2-info,
+.card-3-info,
+.card-4-info{
+    border: 1px solid var(--darkGrey);
+
+    margin-top: -5px;
+    /* why? 
+    so that no gap between card-image & card-info */
+}
+
+/* styling-end */
+
+
+
+
+
+
+
+
+
+
+
+/* grid-assignment-starts */
+
+.cards{
+    display: grid;
+    /* grid-template-columns: 1fr; */
+    justify-items: center;
+    align-content: center;
+    /* why above grid?
+    to place whole of this part at center */
+}
+
+.cards a{
+    justify-self: flex-start;
+    /* why?
+    to place it at flex-start */
+}
+
+.cards-container{
+    display: grid;
+    justify-items: center;
+    row-gap: 85px;
+    margin: 0 8%;
+    /* .cards was assigned a grid, 
+    then why again .cards-container, 
+
+    .cards-container is a child of .cards, 
+    but it's children are not a children of .cards, 
+    so shd assign a grid to it separately */
+}
+
+
+/* grid-assignment-ends */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* transition-starts */
+
+.cards a:hover{
+    color: white;
+    background: var(--primaryColor);
+}
+
+/* transition-ends */
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries start */
+
+@media screen and (min-width:950px){
+
+    .cards-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        row-gap: 80px;
+        column-gap: 30px;
+
+        margin: 0 12%;
+    }
+
+}
+
+@media screen and (min-width:1250px){
+
+    .cards-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        row-gap: 80px;
+        column-gap: 30px;
+
+        margin: 0 12%;
+    }
+
+}
+
+/* media queries end */

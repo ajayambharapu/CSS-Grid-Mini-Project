@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primaryColor: #f15025;
+    --mainBlack: #222;
+    --mainWhite: #fff;
+    --offWhite: #f7f7f7;
+    --darkGrey: #afafaf;
+    --mainTransition: all 0.3s linear;
+    --mainSpacing: 0.2rem;
+    --ff-primary: "Fira Code", monospace;
+}
+
+.navigation{
+    background: var(--darkGrey);
+}
+
+.navigation a{
+    text-decoration: none;
+    text-transform: capitalize;
+    color: var(--primaryColor);
+    padding: 17px;
+    font-size: 17px;
+    font-family: var(--ff-primary);
+    letter-spacing: 3px;
+
+    transition: all 0.5s 0s;
+}
+
+.nav-links-set{
+    display: grid;
+    grid-template-columns: 1fr;
+    /* the above grid is activated to place the links in a single column */
+}
+
+/* styling ends */
+
+
+
+
+
+
+
+/* transition starts */
+
+.navigation a:hover{
+    color: var(--mainBlack);
+}
+
+/* transition ends */
+
+
+
+
+
+
+/* media query starts */
+
+@media screen and (min-width:1000px){
+
+    .nav-links-set{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /* the above grid is activated to place the links in a single row */
+
+        justify-items: center;
+        /* the above prop places the content at the center of it's cells */
+    }
+
+    .navigation{
+        padding: 0% 12%;
+        /* why?, to bring the navigation links little closer */
+    }
+}
+
+/* media query ends */

@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primaryColor: #f15025;
+    --mainBlack: #222;
+    --mainWhite: #fff;
+    --offWhite: #f7f7f7;
+    --darkGrey: #afafaf;
+    --mainTransition: all 0.3s linear;
+    --mainSpacing: 0.2rem;
+    --ff-primary: "Fira Code", monospace;
+}
+
+.images{
+    padding-top: 65px;
+}
+
+.images-container{
+    padding-top: 40px;
+    padding-bottom: 90px;
+    margin: 0 5%;
+}
+
+.images h1{
+    color: black;
+    font-family: var(--ff-primary);
+    text-transform: capitalize;
+    font-size: 50px;
+    letter-spacing: 5px;
+    text-align: center;
+    line-height: 72px;
+}
+
+.images a{
+    color: var(--primaryColor);
+    background: white;
+    display: block;
+    border: 3px solid var(--primaryColor);
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-family: var(--ff-primary);
+    padding: 10px;
+    margin: 50px;
+    width: 160px;
+    text-align: center;
+
+    transition: all 0.5s 0s;
+}
+
+.image img{
+    width: 100%;
+    /* why?, since img is the grid-cell, i shd write this property, to make this child sit in it's container completely */
+}
+
+/* styling ends */
+
+
+
+
+
+
+
+
+
+/* grid-assignment starts */
+
+.images-container{
+    display: grid;
+    row-gap: 25px;
+}
+
+/* grid-assignment ends */
+
+
+
+
+
+
+
+
+
+
+
+/* transition-starts */
+
+.images a:hover{
+    color: white;
+    background: var(--primaryColor);
+}
+
+/* transition-ends */
+
+
+
+
+
+
+
+
+
+
+/* media queries start */
+
+@media screen and (min-width:750px){
+
+    .images-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 30px;
+    }
+
+}
+
+@media screen and (min-width:1000px){
+
+    .images-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 30px;
+    }
+
+}
+
+@media screen and (min-width:1200px){
+
+    .images-container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 200px);
+        
+        grid-template-areas: 
+        "a a a b"
+        "a a a c"
+        "d d d d"
+        "e f f f"
+        "e x y z"
+        ;
+    }
+
+    .image-1{
+        grid-area: a;
+    }
+
+    .image-2{
+        grid-area: b;
+    }
+
+    .image-3{
+        grid-area: c;
+    }
+
+    .image-4{
+        grid-area: d;
+    }
+
+    .image-5{
+        grid-area: e;
+    }
+
+    .image-6{
+        grid-area: f;
+    }
+
+    .image-7{
+        grid-area: x;
+    }
+
+    .image-8{
+        grid-area: y;
+    }
+
+    .image-9{
+        grid-area: z;
+    }
+
+
+    /* todo compulsory */
+    .images img{
+        height: 100%;
+        /* why?, 
+        so that grid-children 
+        do not get overlapped 
+        and fit their respective cell */
+
+        object-position: center;
+        object-fit: cover;
+    }
+
+}
+
+/* media queries end */
